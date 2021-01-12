@@ -1,5 +1,5 @@
 {
-  "name": "tools",
+  "name": "vue-iview-electron",
   "version": "1.0.0",
   "description": "工具箱",
   "private": true,
@@ -21,9 +21,10 @@
     "electron-dl": "^2.0.0",
     "electron-localstorage": "^1.0.5",
     "electron-store": "^5.1.1",
+    "qnplugin": "^2.7.2",
     "request-progress": "^3.0.0",
     "view-design": "^4.2.0",
-    "vue": "2.6.10",
+    "vue": "2.6.11",
     "vue-electron": "^1.0.6",
     "vue-infinite-loading": "^2.4.4",
     "vue-lazyload": "^1.3.3",

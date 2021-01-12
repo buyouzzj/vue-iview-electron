@@ -16,8 +16,11 @@ module.exports = {
         'cb',
         'callback'
       ]
-    ],
-    'no-extend-native': 0,
+		],
+		'indent': 'off',
+		'no-tabs': 'off',
+		'no-extend-native': 0,
+		'no-template-curly-in-string': 'off',
     'vue/html-indent': 2,
     'vue/html-closing-bracket-spacing': 2,
     'vue/no-multi-spaces': 2,

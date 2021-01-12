@@ -31,15 +31,18 @@ export default {
     clickoutside
   },
   mounted () {
-    const modalWrapper = document.querySelector('.modal-wrapper')
-    ipcRenderer.on('context-menu', (e, data) => {
-      console.log(data)
+    ipcRenderer.on('context-menu', this.showContextMenu)
+  },
+  beforeDestroy () {
+    ipcRenderer.removeAllListeners('context-menu')
+  },
+  methods: {
+    showContextMenu (e, data) {
+      const modalWrapper = document.querySelector('.modal-wrapper')
       modalWrapper.style.left = data.x + 'px'
       modalWrapper.style.top = data.y + 'px'
       this.visible = true
-    })
-  },
-  methods: {
+    },
     handleClose () {
       this.visible = false
     },
@@ -59,6 +62,8 @@ export default {
 .modal-wrapper {
   padding: 6px 0px;
   position: absolute;
+  z-index: 100;
+  background-color: #fff;
   width: 240px;
   border-radius: 4px;
   box-shadow: 0 0 4px 0 #ccc;

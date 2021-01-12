@@ -1,4 +1,4 @@
-# xw-client
+# vue-iview-electron
 
 ## Project setup
 ```

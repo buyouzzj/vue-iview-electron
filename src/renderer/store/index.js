@@ -5,9 +5,9 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    sidebarWidth: 60,
+    sidebarWidth: 150,
     headerHeight: 48,
-    collapse: true
+    collapse: false
   },
   mutations: {
     updateState (state, param) {

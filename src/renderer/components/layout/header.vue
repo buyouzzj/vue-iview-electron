@@ -24,7 +24,7 @@ export default {
         { type: 'md-remove', action: 'hide', tooltip: '隐藏' },
         { type: 'md-qr-scanner', action: 'max', tooltip: '最大最小化' },
         // { type: 'md-resize', action: 'mini', tooltip: '迷你' },
-        { type: 'md-close', action: 'close', tooltip: '关闭' }
+        { type: 'md-close', action: 'close', tooltip: '退出' }
       ]
     }
   },
@@ -55,7 +55,13 @@ export default {
           this.$router.push('/mini')
           break
         case 'close':
-          ipcRenderer.send('window-close')
+          this.$Modal.confirm({
+            title: '提示',
+            content: '确定要退出程序吗？',
+            onOk: () => {
+              ipcRenderer.send('window-close')
+            }
+          })
           break
         default:
           break
@@ -84,6 +90,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   .title-wrapper {
+    cursor: pointer;
     .rotate90 {
       transform: rotate(90deg);
     }

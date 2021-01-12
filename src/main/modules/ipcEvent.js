@@ -28,7 +28,7 @@ export default function () {
   ipcMain.on('window-max', () => {
     if (global.mainWindow.isMaximized()) {
       log('恢复窗口大小')
-      global.mainWindow.restore()
+      global.mainWindow.unmaximize()
     } else {
       log('放大窗口')
       global.mainWindow.maximize()
@@ -36,7 +36,7 @@ export default function () {
   })
 
   ipcMain.on('show-devtool', () => {
-    global.mainWindow.webContents.openDevTools()
+    if (!global.mainWindow.webContents.isDevToolsOpened()) global.mainWindow.webContents.openDevTools()
   })
 
   ipcMain.on('window-close', () => {
