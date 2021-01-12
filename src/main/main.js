@@ -78,7 +78,6 @@ function createWindow () {
     // 安装vue-devtools
     let extensions = BrowserWindow.getDevToolsExtensions()
     if (!extensions[ 'Vue.js devtools' ]) {
-      console.log(81, __dirname)
       BrowserWindow.addDevToolsExtension(path.resolve(__dirname, '../src/main/vue-devtools/'))
     }
     // 打开调试窗口
